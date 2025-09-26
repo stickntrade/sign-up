@@ -12,8 +12,8 @@
 
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" minlength="2" maxlength="18" required>
-                <small style="color:red;display:none;" id="usernameError">Username must be 2–18 characters long.</small>
+                <input type="text" id="username" name="username" minlength="6" maxlength="18" required>
+                <small style="color:red;display:none;" id="usernameError">Username must be 6–18 characters long.</small>
             </div>
 
             <div class="input-group">
@@ -52,7 +52,7 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
     const username = document.getElementById("username");
     const error = document.getElementById("usernameError");
 
-    if (username.value.length < 2 || username.value.length > 18) {
+    if (username.value.length < 6 || username.value.length > 18) {
         e.preventDefault(); // stop form submission
         error.style.display = "block";
         username.focus();
@@ -68,4 +68,5 @@ document.write(unescape('%20%20%3C%73%63%72%69%70%74%3E%0A%20%20%20%20%0A%20%20%
 </script>
 </body>
 </html>
+
 
