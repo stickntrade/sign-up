@@ -1,0 +1,115 @@
+/* styles.css */
+
+body {
+  margin: 0;
+  padding: 0;
+  background: url('background.png') no-repeat center center fixed;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;       /* vertical center */
+  justify-content: center;   /* horizontal center */
+}
+
+
+
+.form-container {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+
+    
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+    text-align: center;
+}
+
+.input-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.captcha-box {
+    margin-bottom: 15px;
+}
+
+img {
+    border: 1px solid #ccc;
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 999px; /* <- This creates the pill shape */
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.captcha-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+#captchaImage {
+    flex: 1;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    height: auto;
+    width: 100%;
+}
+
+#reloadCaptchaButton {
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    padding: 4px;
+    background-color: white;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+#reloadCaptchaButton:hover {
+    background-color: #e6f0ff;
+    transform: rotate(90deg);
+}
+.form-message {
+    text-align: center;
+    font-size: 14px;
+    color: #555;
+    margin-bottom: 20px;
+}
+
