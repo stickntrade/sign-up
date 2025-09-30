@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Sign-up</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .tos-box {
+        margin: 15px 0;
+        font-size: 14px;
+        color: #333;
+    }
+    .tos-box a {
+        color: #007bff;
+        text-decoration: none;
+    }
+    .tos-box a:hover {
+        text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+    <div class="form-container">
+        <form id="registerForm">
+            <h2>Registration Form</h2>
+            <p class="form-message">Please fill up the form to register</p>
+
+            <div class="input-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" minlength="6" maxlength="18" required>
+                <small style="color:red;display:none;" id="usernameError">Username must be 6–18 characters long.</small>
+            </div>
+
+            <div class="input-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="input-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <div class="input-group">
+                <label for="confirmPassword">Confirm Password</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+
+            <div class="input-group">
+                <label for="captchaImage">Type the text you see:</label>
+                <div class="captcha-box">
+                    <img src="" alt="CAPTCHA" id="captchaImage">
+                    <img id="reloadCaptchaButton" src="https://i.imgur.com/sTVaRa2.png" alt="Reload Captcha" title="Reload Captcha">
+                </div>
+            </div>
+
+            <div class="input-group">
+                <input type="text" id="captchaInput" name="captchaInput" placeholder="Enter CAPTCHA" required>
+            </div>
+
+            <div class="tos-box">
+                <label>
+                    <input type="checkbox" id="agreeTos" required>
+                    I agree to the <a href="StickNTradeTOS.html" target="_blank">Terms of Service</a> and 
+                    <a href="StickNTradePrivacyPolicy.html" target="_blank">Privacy Policy</a>.
+                </label>
+            </div>
+
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+<script src="playerio.js"></script>
+<script src="scripts.js"></script>
+
+<script>
+document.getElementById("registerForm").addEventListener("submit", function(e) {
+    const username = document.getElementById("username");
+    const error = document.getElementById("usernameError");
+    const agreeTos = document.getElementById("agreeTos");
+
+    if (username.value.length < 6 || username.value.length > 18) {
+        e.preventDefault(); // stop form submission
+        error.style.display = "block";
+        username.focus();
+        return;
+    } else {
+        error.style.display = "none";
+    }
+
+    if (!agreeTos.checked) {
+        e.preventDefault();
+        alert("You must agree to the Terms of Service and Privacy Policy to register.");
+        return;
+    }
+});
+</script>
+
+</body>
+</html>
