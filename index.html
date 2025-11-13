@@ -27,7 +27,7 @@
 
             <div class="input-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" minlength="6" maxlength="18" required>
+                <input type="text" id="username" name="username" minlength="1" maxlength="18" required>
                 <small style="color:red;display:none;" id="usernameError">Username must be 6–18 characters long.</small>
             </div>
 
@@ -79,7 +79,7 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
     const error = document.getElementById("usernameError");
     const agreeTos = document.getElementById("agreeTos");
 
-    if (username.value.length < 6 || username.value.length > 18) {
+    if (username.value.length < 1 || username.value.length > 18) {
         e.preventDefault(); // stop form submission
         error.style.display = "block";
         username.focus();
@@ -98,5 +98,6 @@ document.getElementById("registerForm").addEventListener("submit", function(e) {
 
 </body>
 </html>
+
 
 
